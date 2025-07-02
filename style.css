@@ -16,10 +16,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 50px;
 }
 
 h1 {
   margin: 0;
+  te
 }
 
 .action-buttons button {
