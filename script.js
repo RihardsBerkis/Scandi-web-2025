@@ -1,12 +1,12 @@
-// Initialize products array from localStorage
+
 let products = JSON.parse(localStorage.getItem('products')) || [];
 
-// DOM Content Loaded event
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Load products when page loads
+  
   loadProducts();
   
-  // Set up event listeners based on current page
+  
   if (window.location.pathname.includes('index.html') || 
       window.location.pathname === '/') {
     setupProductListPage();
@@ -42,12 +42,12 @@ function handleProductTypeChange(e) {
   const furnitureOptions = document.getElementById('furniture-options');
   const bookOptions = document.getElementById('book-options');
   
-  // Hide all options first
+  
   dvdOptions.style.display = 'none';
   furnitureOptions.style.display = 'none';
   bookOptions.style.display = 'none';
   
-  // Show selected option
+  
   if (type === 'DVD') {
     dvdOptions.style.display = 'block';
   } else if (type === 'Furniture') {
@@ -63,19 +63,19 @@ function handleSaveProduct(e) {
   const type = document.getElementById('productType').value;
   let product = {};
   
-  // Basic fields
+  
   product.sku = document.getElementById('sku').value;
   product.name = document.getElementById('name').value;
   product.price = document.getElementById('price').value;
   product.type = type;
   
-  // Validate required fields
+  
   if (!product.sku || !product.name || !product.price || !product.type) {
     alert('Please fill in all required fields');
     return;
   }
   
-  // Type-specific fields
+  
   if (type === 'DVD') {
     const size = document.getElementById('size').value;
     if (!size) {
@@ -107,17 +107,17 @@ function handleSaveProduct(e) {
     product.description = `Weight: ${weight}KG`;
   }
   
-  // Check for duplicate SKU
+  
   if (products.some(p => p.sku === product.sku)) {
     alert('SKU already exists. Please use a unique SKU.');
     return;
   }
   
-  // Add to products array and save
+  
   products.push(product);
   localStorage.setItem('products', JSON.stringify(products));
   
-  // Redirect to product list
+  
   window.location.href = 'index.html';
 }
 
@@ -129,16 +129,16 @@ function handleMassDelete() {
     return;
   }
   
-  // Get SKUs of products to delete
+  
   const skusToDelete = Array.from(checkboxes).map(checkbox => {
     return checkbox.closest('.product-box').querySelector('p:first-child').textContent;
   });
   
-  // Filter out products to delete
+  
   products = products.filter(product => !skusToDelete.includes(product.sku));
   localStorage.setItem('products', JSON.stringify(products));
   
-  // Reload the page to show updated list
+  
   window.location.reload();
 }
 
@@ -146,10 +146,10 @@ function loadProducts() {
   const productGrid = document.querySelector('.product-grid');
   if (!productGrid) return;
   
-  // Clear existing products
+  
   productGrid.innerHTML = '';
   
-  // Add products from storage
+  
   products.forEach(product => {
     const productBox = document.createElement('div');
     productBox.className = 'product-box';
