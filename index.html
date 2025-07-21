@@ -6,52 +6,23 @@
   <title>Product List</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<head>
-  <style>
-    h1{
-      text-align: center;
-      margin-top: 20px;
-      width: 80%
-    }
-  </style>
-</head>
 <body>
   <header>
     <h1>Product List</h1>
     <div class="action-buttons">
-      <button id="add-product-btn">ADD</button>
+      <a href="add-product.html" id="add-product-btn">ADD</a>
       <button id="delete-product-btn">MASS DELETE</button>
     </div>
   </header>
 
   <main class="product-grid">
-    <!-- Sample Product Box -->
-    <div class="product-box">
-      <input type="checkbox" class="delete-checkbox" />
-      <p>JVC200123</p>
-      <p>Acme DISC</p>
-      <p>1.00 $</p>
-      <p>Size: 700 MB</p>
-    </div>
-    <div class="product-box">
-      <input type="checkbox" class="delete-checkbox" />
-      <p>GGWP0007</p>
-      <p>War and Peace</p>
-      <p>20.00 $</p>
-      <p>Weight: 2KG</p>
-    </div>
-    <div class="product-box">
-      <input type="checkbox" class="delete-checkbox" />
-      <p>TR120555</p>
-      <p>Chair</p>
-      <p>40.00 $</p>
-      <p>Dimension: 24x45x15</p>
-    </div>
-    <!-- Add more product-box elements as needed -->
+    <!-- Products will be loaded here by JavaScript -->
   </main>
 
   <footer>
     <p>Scandiweb Test assignment</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
