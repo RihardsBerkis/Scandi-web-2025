@@ -7,7 +7,7 @@
 
     <ul>
         <li>
-            <a href="">Create product </a>
+            <a href="/admin/creat.php">Create product </a>
         </li>
     </ul>
 
